@@ -2,13 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+ <style type="text/css">
+        body {height: 100vh;
+               background-image: url('https://as1.ftcdn.net/v2/jpg/00/79/90/16/1000_F_79901603_e13nmfVcMRautfNDzvgvE3DZxzrt49UZ.jpg');
+
+            margin-top: 80px;
+            padding: 30px;
+            background-size:   cover;
+            font-size:20px;
+            font-family: sans-serif;
+        }
+
+        div {
+
+
+            position: fixed;
+
+            top: 5px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+           ;
+        }
+
+        div * {
+            display: inline;
+        }
+
+        div li {
+            margin: 20px;
+        }
+
+        div li a {
+            color: red;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
+<div>
+
+ <nav>
+        <ul>
+
+        <li><a  href="{% url 'room' %}">  Weekly menu </a></li>
+        <li><a  href="#" > New challenges  </a></li>
+        <li><a  href="#" > My favourites</a></li>
+
+        </ul>
+ </nav>
+</div>
 {% include 'navbar.html' %}
 {% block content %}
 
 
 {% endblock %}
+
 </body>
 </html>
