@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from . models import Room
+from . models import Room, Meal
 from django.shortcuts import render, redirect, HttpResponse
-
-#ro=[{'id': 1, "name": "30 Minutes or less"}, {'id': 2, "name": "5 Ingredients or less"},{'id': 3, "name": "kid approved"}, {'id': 4, "name": "Special diets"}, {'id': 5, "name": "Cook for one or two"}, {'id': 6, "name": "Cooking for a crowd"},{'id': 7, "name": "Vegan brother-in-law"}]
+from .form import MealForm
 
 
 def home (request):
@@ -12,8 +11,23 @@ def home (request):
 
 
 def room(request, pk):
-    print((Room.objects.get(id=3)))
-    #room = Room.objects.get(id=int(pk))
-    #context = {'room': room}
-    #return render(request, 'base/rooms.html', context)
-    return HttpResponse("hi")
+
+    room = Room.objects.get(id=int(pk))
+    context = {'room': room}
+    return render(request, 'base/rooms.html', context)
+
+
+
+
+def add_meal_to_room(request, pk):
+    room = Room.objects.get(id=pk)
+    if request.method == 'POST':
+        form = MealForm(request.POST, request.FILES)
+        if form.is_valid():
+            meal = form.save(commit=False)
+            meal.room = room
+            meal.save()
+            return redirect('room', room_id=room_id)
+    else:
+        form = MealForm()
+    return render(request, 'add_meal_to_room.html', {'room': room, 'form': form})

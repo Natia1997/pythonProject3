@@ -3,7 +3,9 @@
     <h1>  </h1>
 
     {% for room in ro %}
-        <h2>  {{room.name}} </h2>
+<a href="{% url 'room' room.id %}" style="color: red; text-decoration: none;">
+    <h3 style="color: red;">{{room.name}}</h3>
+</a>
 
     {%endfor%}
 {% endblock %}
