@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
-            <a href="{% url 'add_meal_to_room' room.id %}" class="btn btn-primary">Add Meal</a>
+            <a href="{% url 'add_meal_to_room' room.id %}" >Add Meal</a>
+            <a href="{% url 'delete_room' room.id %}" >delete</a>
             <h1>{{ room.name }}</h1>
             <p> {{room.description}} </p>
 

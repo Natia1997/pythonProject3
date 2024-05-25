@@ -1,7 +1,7 @@
-from django import forms
-from .models import Meal
+from django.forms import ModelForm
+from .models import Room
 
-class MealForm(forms.ModelForm):
+class MealForm(ModelForm):
     class Meta:
-        model = Meal
-        fields = ['name', 'description', 'picture']
+        model = Room
+        fields = ['name', 'description']

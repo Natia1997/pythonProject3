@@ -1,13 +1,12 @@
-
 {% extends 'main.html' %}
 {% block content %}
 
-    <div>
-        <form method="post" action="">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <a href=""></a>
-            <button type="submit">Add Meal</button>
-        </form>
-    <div>
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Meal</button>
+    </form>
+
 {% endblock %}
