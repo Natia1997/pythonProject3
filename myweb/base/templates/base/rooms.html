@@ -1,5 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
+            <h1><p style="margin-left: 40px;">Cooking with a couple</p></h1>
+            <h3><p style="margin-left: 80px;">What is today's challenge?</p></h3>
             <a href="{% url 'add_meal_to_room' room.id %}" >Add Meal</a>
             <a href="{% url 'delete_room' room.id %}" >delete</a>
             <h1>{{ room.name }}</h1>

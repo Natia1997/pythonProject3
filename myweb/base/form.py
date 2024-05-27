@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import Room
+from .models import Room, Meal
 
 class MealForm(ModelForm):
     class Meta:
-        model = Room
+        model = Meal
         fields = ['name', 'description']
