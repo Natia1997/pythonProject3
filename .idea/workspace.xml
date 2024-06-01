@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0007c7e2-2a50-4a44-befd-ec5f7b1c5636" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/myweb/base/templates/base/login_register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/base/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/base/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myweb/base/templates/base/add_meal_to_room.html" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/templates/base/add_meal_to_room.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/base/templates/base/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/templates/base/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/base/templates/base/rooms.html" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/templates/base/rooms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/base/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/base/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myweb/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myweb/myweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/myweb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myweb/myweb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/myweb/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myweb/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/myweb/templates/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716637715758</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1716790114280</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716790114280</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1716790199926</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716790199926</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

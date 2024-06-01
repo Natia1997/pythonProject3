@@ -1,11 +1,28 @@
 {% extends 'main.html' %}
 {% block content %}
-            <h1><p style="margin-left: 40px;">Cooking with a couple</p></h1>
-            <h3><p style="margin-left: 80px;">What is today's challenge?</p></h3>
-            <a href="{% url 'add_meal_to_room' room.id %}" >Add Meal</a>
-            <a href="{% url 'delete_room' room.id %}" >delete</a>
-            <h1>{{ room.name }}</h1>
-            <p> {{room.description}} </p>
+    <h1><p style="margin-left: 40px;">Cooking with a couple</p></h1>
 
+     <button  href="{% url 'add_meal_to_room' room.id %}" >Add Meal </button>
 
+    <h1>{{ room.name }}</h1>
+    <p>{{ room.description }}</p>
+
+    <br>
+    <ul>
+        {% for meal in room_meals %}
+            <li>
+                <h3 style="color: white">{{ meal.name }}</h3>
+                <p style="color: white;">{{ meal.description }}</p>
+                {% if meal.picture %}
+                    <img src="{{ meal.picture.url }}" alt="{{ meal.name }}">
+                {% endif %}
+                <form action="{% url 'delete_meal' meal.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+
+        {% endfor %}
+        </br>
+    </ul>
 {% endblock %}

@@ -30,6 +30,7 @@ class Messages(models.Model):
         return self.body[0:50]
 
 class Meal(models.Model):
+
     name = models.CharField(max_length=100)
     description = models.TextField()
     picture = models.ImageField(upload_to='meal_pictures/', null=True, blank=True)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from . models import Room
-from django.shortcuts import render, redirect, HttpResponse
+from . models import Room, Meal
+from django.shortcuts import get_object_or_404, redirect, render, HttpResponse
 from .form import MealForm
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -18,7 +18,8 @@ def home (request):
 def room(request, pk):
 
     room = Room.objects.get(id=int(pk))
-    context = {'room': room}
+    room_meals=room.meal_set.all()
+    context = {'room': room,'room_meals': room_meals}
     return render(request, 'base/rooms.html', context)
 
 
@@ -28,7 +29,7 @@ def add_meal_to_room(request, pk):
     room = Room.objects.get(id=pk)
 
     if request.method == 'POST':
-        form = MealForm(request.POST)
+        form = MealForm(request.POST, request.FILES)
         if form.is_valid():
             meal = form.save(commit=False)
             meal.room = room
@@ -44,6 +45,7 @@ def add_meal_to_room(request, pk):
 @login_required(login_url='login')
 def delete_room(request, pk):
     room = Room.objects.get(id=pk)
+
     context = {'obj': room}
     if request.user != room.host:
         return HttpResponse("<h1>You don't have permission!</h1>")
@@ -88,3 +90,16 @@ def register_page(request):
             login(request, user)
             return redirect('home')
     return render(request, 'base/login_register.html', {'form': form})
+
+@login_required(login_url='login')
+def delete_meal(request, pk):
+    meal = get_object_or_404(Meal, id=pk)
+    if request.method == "POST":
+        if request.META.get('HTTP_REFERER') and 'add_meal_to_room' in request.META.get('HTTP_REFERER'):
+
+            pass
+        meal.delete()
+        return redirect('home')
+
+    return render(request, 'base/delete.html', {'obj': meal})
+
